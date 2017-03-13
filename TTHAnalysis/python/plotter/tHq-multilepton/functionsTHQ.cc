@@ -297,6 +297,33 @@ Forward jet pt cut of 25 GeV
   return 1.0;
 }
 
+float fwdjet_eventWeight_25_check(float eta){
+/*
+Return an event weight based on *HALF* the data/MC ratio of the maxJetEta25
+distribution in OS emu events.
+Forward jet pt cut of 25 GeV
+*/
+  eta = fabs(eta);
+  if(eta < 0.278) return 1.04625;
+  if(eta < 0.556) return 1.04600;
+  if(eta < 0.833) return 1.03375;
+  if(eta < 1.111) return 1.04440;
+  if(eta < 1.389) return 1.03795;
+  if(eta < 1.667) return 1.00545;
+  if(eta < 1.944) return 1.03635;
+  if(eta < 2.222) return 1.03575;
+  if(eta < 2.500) return 1.00560;
+  if(eta < 2.778) return 1.01935;
+  if(eta < 3.056) return 0.98435;
+  if(eta < 3.333) return 0.90685;
+  if(eta < 3.611) return 0.95050;
+  if(eta < 3.889) return 0.93425;
+  if(eta < 4.167) return 0.96385;
+  if(eta < 4.444) return 0.90555;
+  if(eta < 4.722) return 0.82485;
+  if(eta < 5.000) return 1.0000;
+  return 1.0;
+}
 float fwdjet_eventWeight_30(float eta){
 /*
 Return an event weight based on the data/MC ratio of the maxJetEta25
