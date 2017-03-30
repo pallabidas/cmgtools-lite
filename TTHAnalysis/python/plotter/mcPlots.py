@@ -923,7 +923,7 @@ class PlotMaker:
                 is2D = total.InheritsFrom("TH2")
                 if 'data' in pmap: 
                     if options.poisson and not is2D:
-                        pdata = getDataPoissonErrors(pmap['data'], False, True)
+                        pdata = getDataPoissonErrors(pmap['data'], True, True)
                         pdata.Draw("PZ SAME")
                         pmap['data'].poissonGraph = pdata ## attach it so it doesn't get deleted
                     else:
