@@ -16,8 +16,8 @@ totCharge               : LepGood1_charge*2       : [-1.5,-0.5,0.5,1.5]; XTitle=
 thqMVA_tt_2lss_40   : thqMVA_tt_2lss_40  : 16,-1.,1.0; XTitle="kinMVA (tHq vs t#bar{t})", Legend='TR'
 thqMVA_ttv_2lss_40  : thqMVA_ttv_2lss_40 : 16,-1.,1.0; XTitle="kinMVA (tHq vs t#bar{t}V)", Legend='TR'
 
-finalBins_40        : tHq_MVAto1D_2lss_10(thqMVA_tt_2lss_40, thqMVA_ttv_2lss_40) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='Bin No.'
-finalBins_log_mm_40 : tHq_MVAto1D_2lss_10(thqMVA_tt_2lss_40, thqMVA_ttv_2lss_40) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='Bin No.',Logy,LegendCutoff=0.01,YMin=0.3,YMax=100,Legend='BL' # for mm
-finalBins_log_em_40 : tHq_MVAto1D_2lss_10(thqMVA_tt_2lss_40, thqMVA_ttv_2lss_40) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='Bin No.',Logy,LegendCutoff=0.01,YMin=0.5,YMax=200,Legend='BL' # for em
-finalBins_log_ee_40 : tHq_MVAto1D_2lss_10(thqMVA_tt_2lss_40, thqMVA_ttv_2lss_40) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='Bin No.',Logy,LegendCutoff=0.01,YMin=0.5,YMax=70,Legend='BL' # for ee
-# finalBins_40        : tHq_MVAto1D_2lss_sbratio(thqMVA_tt_2lss_40, thqMVA_ttv_2lss_40) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='Bin No.', Legend='TL'
+finalBins_40        : tHq_MVAto1D_2lss_10(thqMVA_tt_2lss_40, thqMVA_ttv_2lss_40) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='BDT bin'
+finalBins_log_mm_40 : tHq_MVAto1D_2lss_10(thqMVA_tt_2lss_40, thqMVA_ttv_2lss_40) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='BDT bin',Logy,LegendCutoff=0.01,YMin=0.3,YMax=100,Legend='BL' # for mm
+finalBins_log_em_40 : tHq_MVAto1D_2lss_10(thqMVA_tt_2lss_40, thqMVA_ttv_2lss_40) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='BDT bin',Logy,LegendCutoff=0.01,YMin=0.5,YMax=200,Legend='BL' # for em
+finalBins_log_ee_40 : tHq_MVAto1D_2lss_10(thqMVA_tt_2lss_40, thqMVA_ttv_2lss_40) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='BDT bin',Logy,LegendCutoff=0.01,YMin=0.5,YMax=70,Legend='BL' # for ee
+# finalBins_40        : tHq_MVAto1D_2lss_sbratio(thqMVA_tt_2lss_40, thqMVA_ttv_2lss_40) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='BDT bin', Legend='TL'

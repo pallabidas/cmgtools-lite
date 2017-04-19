@@ -1,8 +1,8 @@
 incl_all : + ; IncludeMca="ttH-multilepton/mca-includes/mca-tt.txt", AddWeight="(LepGood1_mcMatchId==0 || LepGood2_mcMatchId==0)", Label="TT fakes+convs", FillColor=ROOT.kBlack, PostFix="_all"
 
 incl_fake : + ; IncludeMca="ttH-multilepton/mca-includes/mca-tt.txt", AddWeight="((LepGood1_mcMatchId==0 && LepGood1_mcPromptGamma==0) || (LepGood2_mcMatchId==0 && LepGood2_mcPromptGamma==0))", Label="TT fakes", FillColor=ROOT.kGray+2, PostFix="_fake"
-incl_gamma : + ; IncludeMca="ttH-multilepton/mca-includes/mca-tt.txt", AddWeight="((LepGood1_mcMatchId==0 && LepGood1_mcPromptGamma==1) || (LepGood2_mcMatchId==0 && LepGood2_mcPromptGamma==1))", Label="Convs", FillColor=ROOT.kOrange, PostFix="_gamma"
-incl_gamma_appl : + ; IncludeMca="ttH-multilepton/mca-includes/mca-tt.txt", AddWeight="((LepGood1_mcMatchId==0 && LepGood1_mcPromptGamma==1) || (LepGood2_mcMatchId==0 && LepGood2_mcPromptGamma==1))",  Label="Convs in appl.", FillColor=ROOT.kOrange-3, FakeRate="ttH-multilepton/fakeRate-2lss-appl.txt", PostFix="_gamma_appl"
+incl_gamma : + ; IncludeMca="ttH-multilepton/mca-includes/mca-tt.txt", AddWeight="((LepGood1_mcMatchId==0 && LepGood1_mcPromptGamma==1) || (LepGood2_mcMatchId==0 && LepGood2_mcPromptGamma==1))", Label="Conversions", FillColor=ROOT.kOrange, PostFix="_gamma"
+incl_gamma_appl : + ; IncludeMca="ttH-multilepton/mca-includes/mca-tt.txt", AddWeight="((LepGood1_mcMatchId==0 && LepGood1_mcPromptGamma==1) || (LepGood2_mcMatchId==0 && LepGood2_mcPromptGamma==1))",  Label="Conversions in appl.", FillColor=ROOT.kOrange-3, FakeRate="ttH-multilepton/fakeRate-2lss-appl.txt", PostFix="_gamma_appl"
 
 incl_FR_TT : + ; IncludeMca="ttH-multilepton/mca-includes/mca-tt.txt", AddWeight="(LepGood1_mcMatchId==0 || LepGood2_mcMatchId==0)", FakeRate="ttH-multilepton/fakeRate-2lss-frmc-tt.txt", Label="FR (TT)", FillColor=ROOT.kBlue, PostFix="_FR_TT"
 
