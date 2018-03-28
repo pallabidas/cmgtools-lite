@@ -18,5 +18,5 @@ thqMVA_tt_3l_40     : thqMVA_tt_3l_40    : 16,-1.,1.0; XTitle="kinMVA (tHq vs t#
 thqMVA_ttv_3l_40    : thqMVA_ttv_3l_40   : 16,-1.,1.0; XTitle="kinMVA (tHq vs t#bar{t}V)", Legend='TR'
 
 finalBins_40        : tHq_MVAto1D_3l_10(thqMVA_tt_3l_40, thqMVA_ttv_3l_40) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='Bin No.'
-finalBins_log_40    : tHq_MVAto1D_3l_10(thqMVA_tt_3l_40, thqMVA_ttv_3l_40) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='Bin No.',Legend='BL',Logy,LegendCutoff=0.01,YMin=0.05,YMax=80
+finalBins_log_40    : tHq_MVAto1D_3l_10(thqMVA_tt_3l_40, thqMVA_ttv_3l_40) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='Bin No.',Legend='TR',Logy,LegendCutoff=0.01,YMin=0.05,YMax=500
 # finalBins_40        : tHq_MVAto1D_2lss_sbratio(thqMVA_tt_3l_40, thqMVA_ttv_3l_40) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='Bin No.', Legend='TL'

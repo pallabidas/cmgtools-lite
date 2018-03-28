@@ -1,8 +1,11 @@
 # kinMVA input and output plots (2lss)
 
-nJet25                  : nJet25                  : [1.5,2.5,3.5,4.5,5.5,6.5,7.5] ; XTitle='N(jet\, p_{T} > 25\, |#eta|<2.4)'
+#LepGood_miniRelIso       : LepGood_miniRelIso      : 16,0,0.5; XTitle='Relative mini isolation (muons)', Logy, Legend='TR', LegendCutoff=0.01
+#LepGood_mvaTTH           : LepGood_mvaTTH          : 16,0,1; XTitle='Lepton MVA values (muons)', Logy, Legend='TR', LegendCutoff=0.01
+
+nJet25                  : nJet25                  : [1.5,2.5,3.5,4.5,5.5,6.5,7.5] ; XTitle='N(jet\, p_{T} > 25\, |#eta|<2.4)', Logy, Legend='TR', LegendCutoff=0.01
 nJetEta1_40             : nJetEta1_40             : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5]; XTitle='N(jet\,|#eta|>1.0) non CSV medium'
-nBJetLoose25            : nBJetLoose25_Recl       : [0.5,1.5,2.5,3.5,4.5] ; XTitle='N(jet\, p_{T} > 25\, CSV loose)'
+nBJetLoose25            : nBJetLoose25_Recl       : [0.5,1.5,2.5,3.5,4.5] ; XTitle='N(jet\, p_{T} > 25\, CSV loose)', Logy, Legend='TR', LegendCutoff=0.01
 maxEtaJet25_40          : maxEtaJet25_40          : 18,0,5.0; XTitle="max jet |#eta| (p_{T} > 40 GeV)"
 dEtaFwdJetBJet_40       : dEtaFwdJetBJet_40       : 18,0,6;   XTitle="#Delta#eta max fwd jet and leading bjet"
 dEtaFwdJet2BJet_40      : dEtaFwdJet2BJet_40      : 18,0,6;   XTitle="#Delta#eta max fwd jet and sub-leading bjet"
@@ -15,9 +18,9 @@ totCharge               : LepGood1_charge*2       : [-1.5,-0.5,0.5,1.5]; XTitle=
 
 thqMVA_tt_2lss_40   : thqMVA_tt_2lss_40  : 16,-1.,1.0; XTitle="kinMVA (tHq vs t#bar{t})", Legend='TR'
 thqMVA_ttv_2lss_40  : thqMVA_ttv_2lss_40 : 16,-1.,1.0; XTitle="kinMVA (tHq vs t#bar{t}V)", Legend='TR'
-
+#
 finalBins_40        : tHq_MVAto1D_2lss_10(thqMVA_tt_2lss_40, thqMVA_ttv_2lss_40) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='Bin No.'
-finalBins_log_mm_40 : tHq_MVAto1D_2lss_10(thqMVA_tt_2lss_40, thqMVA_ttv_2lss_40) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='Bin No.',Logy,LegendCutoff=0.01,YMin=0.3,YMax=100,Legend='BL' # for mm
-finalBins_log_em_40 : tHq_MVAto1D_2lss_10(thqMVA_tt_2lss_40, thqMVA_ttv_2lss_40) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='Bin No.',Logy,LegendCutoff=0.01,YMin=0.5,YMax=200,Legend='BL' # for em
+finalBins_log_mm_40 : tHq_MVAto1D_2lss_10(thqMVA_tt_2lss_40, thqMVA_ttv_2lss_40) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='Bin No.',Logy,LegendCutoff=0.01,YMin=0.3,YMax=700,Legend='TR' # for mm
+finalBins_log_em_40 : tHq_MVAto1D_2lss_10(thqMVA_tt_2lss_40, thqMVA_ttv_2lss_40) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='Bin No.',Logy,LegendCutoff=0.01,YMin=0.8,YMax=900,Legend='TR' # for em
 finalBins_log_ee_40 : tHq_MVAto1D_2lss_10(thqMVA_tt_2lss_40, thqMVA_ttv_2lss_40) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='Bin No.',Logy,LegendCutoff=0.01,YMin=0.5,YMax=70,Legend='BL' # for ee
 # finalBins_40        : tHq_MVAto1D_2lss_sbratio(thqMVA_tt_2lss_40, thqMVA_ttv_2lss_40) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='Bin No.', Legend='TL'

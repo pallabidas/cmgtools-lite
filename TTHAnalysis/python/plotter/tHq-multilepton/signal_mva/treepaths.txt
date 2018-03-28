@@ -1,15 +1,15 @@
 # symlinks:
 # ln -s /afs/cern.ch/work/s/stiegerb/TTHTrees/13TeV/mixture_jecv6prompt_datafull_jul20 trees
 # ln -s /afs/cern.ch/work/s/stiegerb/TTHTrees/13TeV/tHq_eventvars_Nov15 thq_friends
-THQ                             ; trees/THQ/                             ; trees/2_recleaner_v5_b1E2/, thq_friends/
-THW                             ; trees/THW/                             ; trees/2_recleaner_v5_b1E2/, thq_friends/
-TTW_LO                          ; trees/TTW_LO/                          ; trees/2_recleaner_v5_b1E2/, thq_friends/
-TTZ_LO                          ; trees/TTZ_LO/                          ; trees/2_recleaner_v5_b1E2/, thq_friends/
-TTJets_DiLepton                 ; trees/TTJets_DiLepton/                 ; trees/2_recleaner_v5_b1E2/, thq_friends/
-TTJets_DiLepton_ext_skim3l      ; trees/TTJets_DiLepton_ext_skim3l/      ; trees/2_recleaner_v5_b1E2/, thq_friends/
-TTJets_SingleLeptonFromT        ; trees/TTJets_SingleLeptonFromT/        ; trees/2_recleaner_v5_b1E2/, thq_friends/
-TTJets_SingleLeptonFromTbar     ; trees/TTJets_SingleLeptonFromTbar/     ; trees/2_recleaner_v5_b1E2/, thq_friends/
-TTJets_SingleLeptonFromTbar_ext ; trees/TTJets_SingleLeptonFromTbar_ext/ ; trees/2_recleaner_v5_b1E2/, thq_friends/
-TTJets_SingleLeptonFromT_ext    ; trees/TTJets_SingleLeptonFromT_ext/    ; trees/2_recleaner_v5_b1E2/, thq_friends/
-TTWToLNu                        ; trees/TTWToLNu/                        ; trees/2_recleaner_v5_b1E2/, thq_friends/
-TTZToLLNuNu                     ; trees/TTZToLLNuNu/                     ; trees/2_recleaner_v5_b1E2/, thq_friends/
+THQ                             ; trees/THQ/                             ; /afs/cern.ch/work/s/stiegerb/TTHTrees/13TeV/tHq_production_Jan25/1_thq_recleaner_240217/, thq_friends/
+THW                             ; trees/THW/                             ; /afs/cern.ch/work/s/stiegerb/TTHTrees/13TeV/tHq_production_Jan25/1_thq_recleaner_240217/, thq_friends/
+TTW_LO                          ; trees/TTW_LO/                          ; /afs/cern.ch/work/s/stiegerb/TTHTrees/13TeV/tHq_production_Jan25/1_thq_recleaner_240217/, thq_friends/
+TTZ_LO                          ; trees/TTZ_LO/                          ; /afs/cern.ch/work/s/stiegerb/TTHTrees/13TeV/tHq_production_Jan25/1_thq_recleaner_240217/, thq_friends/
+#TTJets_DiLepton                 ; trees/TTJets_DiLepton/                 ; /afs/cern.ch/work/s/stiegerb/TTHTrees/13TeV/tHq_production_Jan25/1_thq_recleaner_240217/, thq_friends/
+#TTJets_DiLepton_ext_skim3l      ; trees/TTJets_DiLepton_ext_skim3l/      ; /afs/cern.ch/work/s/stiegerb/TTHTrees/13TeV/tHq_production_Jan25/1_thq_recleaner_240217/, thq_friends/
+#TTJets_SingleLeptonFromT        ; trees/TTJets_SingleLeptonFromT/        ; /afs/cern.ch/work/s/stiegerb/TTHTrees/13TeV/tHq_production_Jan25/1_thq_recleaner_240217/, thq_friends/
+#TTJets_SingleLeptonFromTbar     ; trees/TTJets_SingleLeptonFromTbar/     ; /afs/cern.ch/work/s/stiegerb/TTHTrees/13TeV/tHq_production_Jan25/1_thq_recleaner_240217/, thq_friends/
+#TTJets_SingleLeptonFromTbar_ext ; trees/TTJets_SingleLeptonFromTbar_ext/ ; /afs/cern.ch/work/s/stiegerb/TTHTrees/13TeV/tHq_production_Jan25/1_thq_recleaner_240217/, thq_friends/
+#TTJets_SingleLeptonFromT_ext    ; trees/TTJets_SingleLeptonFromT_ext/    ; /afs/cern.ch/work/s/stiegerb/TTHTrees/13TeV/tHq_production_Jan25/1_thq_recleaner_240217/, thq_friends/
+#TTWToLNu                        ; trees/TTWToLNu/                        ; /afs/cern.ch/work/s/stiegerb/TTHTrees/13TeV/tHq_production_Jan25/1_thq_recleaner_240217/, thq_friends/
+#TTZToLLNuNu                     ; trees/TTZToLLNuNu/                     ; /afs/cern.ch/work/s/stiegerb/TTHTrees/13TeV/tHq_production_Jan25/1_thq_recleaner_240217/, thq_friends/

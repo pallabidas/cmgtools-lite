@@ -36,7 +36,7 @@ FRIENDTREES=" -F sf/t thqtrees/tHq_production_Jan25/1_thq_recleaner_240217/evVar
 " -F sf/t thqtrees/tHq_production_Jan25/5_triggerDecision_250117_v1/evVarFriend_{cname}.root"\
 " -F sf/t thqtrees/tHq_production_Jan25/6_bTagSF_v2/evVarFriend_{cname}.root"
 DRAWOPTIONS="--lspam '#bf{CMS} #it{Preliminary}' --legendFontSize 0.035"\
-" --showRatio --maxRatioRange 0 2 --fixRatioRange --showMCError"\
+"  --maxRatioRange 0 2 --fixRatioRange --showMCError"\
 
 # Pileup weight, btag SFs, trigger SFs, lepton Eff SFs:
 OPT2L="-W puw2016_nTrueInt_36fb(nTrueInt)*eventBTagSF*"\
@@ -55,7 +55,7 @@ CUTS=""
 PLOTS=""
 case "$PLOTTAG" in
     "3l" )
-        OPTIONS="${OPTIONS} ${DRAWOPTIONS} ${OPT3L} --sP finalBins_40 --sP finalBins_log_40"
+        OPTIONS="${OPTIONS} ${DRAWOPTIONS} ${OPT3L} --sP finalBins_log_40"
         MCA="tHq-multilepton/mca-thq-3l-mcdata-frdata.txt"
         CUTS="tHq-multilepton/cuts-thq-3l.txt"
         PLOTS="tHq-multilepton/plots-thq-3l-kinMVA.txt"
@@ -118,9 +118,9 @@ case "$PLOTTAG" in
         PLOTS="tHq-multilepton/plots-thq-2lss-kinMVA.txt"
         ;;
     "2lss-mm" )
-        OPTIONS="${OPTIONS} ${DRAWOPTIONS} ${OPT2L} -E mm_chan --xp data_flips"
-        # OPTIONS="${OPTIONS} --xP finalBins_log_em_40 --xP finalBins_log_ee_40"
-        OPTIONS="${OPTIONS} --sP finalBins_40 --sP finalBins_log_mm_40 "
+        OPTIONS="${OPTIONS} ${DRAWOPTIONS} ${OPT2L}"
+        OPTIONS="${OPTIONS} --xP finalBins_log_em_40 --xP finalBins_log_ee_40"
+        #OPTIONS="${OPTIONS} --sP finalBins_log_mm_40 "
         MCA="tHq-multilepton/mca-thq-2lss-mcdata-frdata.txt"
         CUTS="tHq-multilepton/cuts-thq-2lss.txt"
         PLOTS="tHq-multilepton/plots-thq-2lss-kinMVA.txt"

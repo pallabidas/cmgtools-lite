@@ -496,7 +496,7 @@ def doRatioHists(pspec,pmap,total,totalSyst,maxRange,fixRange=False,fitRatio=Non
     unity.GetYaxis().SetRangeUser(rmin,rmax);
     unity.GetXaxis().SetTitleFont(42)
     unity.GetXaxis().SetTitleSize(0.14)
-    unity.GetXaxis().SetTitleOffset(0.9)
+    unity.GetXaxis().SetTitleOffset(1.2)
     unity.GetXaxis().SetLabelFont(42)
     unity.GetXaxis().SetLabelSize(0.1)
     unity.GetXaxis().SetLabelOffset(0.007)
@@ -615,6 +615,7 @@ def doLegend(pmap,mca,corner="TR",textSize=0.035,cutoff=1e-2,cutoffSignals=True,
         (x1,y1,x2,y2) = (0.97-legWidth if doWide else .85-legWidth, .7 - textSize*max(nentries-3,0), .90, .91)
         if corner == "TR":
             (x1,y1,x2,y2) = (0.97-legWidth if doWide else .85-legWidth, .7 - textSize*max(nentries-3,0), .90, .91)
+            #(x1,y1,x2,y2) = (0.7, 0.5, 0.95, 0.91)
         elif corner == "TC":
             (x1,y1,x2,y2) = (.5, .75 - textSize*max(nentries-3,0), .5+legWidth, .91)
         elif corner == "TL":
@@ -853,7 +854,7 @@ class PlotMaker:
                 ytitle = "Events" if not self._options.printBinning else "Events / %s" %(self._options.printBinning)
                 total.GetXaxis().SetTitleFont(42)
                 total.GetXaxis().SetTitleSize(0.05)
-                total.GetXaxis().SetTitleOffset(0.9)
+                total.GetXaxis().SetTitleOffset(1.2)
                 total.GetXaxis().SetLabelFont(42)
                 total.GetXaxis().SetLabelSize(0.05)
                 total.GetXaxis().SetLabelOffset(0.007)
@@ -865,7 +866,7 @@ class PlotMaker:
                 total.GetYaxis().SetLabelOffset(0.007)
                 total.GetYaxis().SetTitle(pspec.getOption('YTitle',ytitle))
                 total.GetXaxis().SetTitle(pspec.getOption('XTitle',outputName))
-                total.GetXaxis().SetNdivisions(pspec.getOption('XNDiv',510))
+                total.GetXaxis().SetNdivisions(pspec.getOption('XNDiv',-5))
                 if outputDir: outputDir.WriteTObject(stack)
                 # 
                 if not makeCanvas and not self._options.printPlots: return
@@ -923,7 +924,7 @@ class PlotMaker:
                 is2D = total.InheritsFrom("TH2")
                 if 'data' in pmap: 
                     if options.poisson and not is2D:
-                        pdata = getDataPoissonErrors(pmap['data'], False, True)
+                        pdata = getDataPoissonErrors(pmap['data'], True, True)
                         pdata.Draw("PZ SAME")
                         pmap['data'].poissonGraph = pdata ## attach it so it doesn't get deleted
                     else:
@@ -1087,7 +1088,7 @@ class PlotMaker:
                                     plot = pmap[p]
                                     if "TGraph" in plot.ClassName(): continue
                                     c1.SetRightMargin(0.20)
-                                    plot.SetContour(100)
+                                    plot.SetContor(100)
                                     ROOT.gStyle.SetPaintTextFormat(pspec.getOption("PaintTextFormat","g"))
                                     plot.SetMarkerSize(pspec.getOption("MarkerSize",1))
                                     if pspec.hasOption('ZMin') and pspec.hasOption('ZMax'):

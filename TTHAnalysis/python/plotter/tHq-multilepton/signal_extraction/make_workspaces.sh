@@ -6,7 +6,7 @@ COMBINEDIR="/afs/cern.ch/user/s/stiegerb/combine/"
 cd $COMBINEDIR; eval `scramv1 runtime -sh`; cd -;
 
 MODEL="K5"
-if [[ "$1" == "K5" || "$1" == "K4" || "$1" == "K6"  || "$1" == "K6b" ]]; then
+if [[ "$1" == "K5" || "$1" == "K4" || "$1" == "K6"  || "$1" == "K6b" || "$1" == "K7" ]]; then
 	MODEL=$1
 	shift;
 fi
