@@ -11,8 +11,10 @@ case $HOSTNAME in
         test -d /tmp/$USER/TREES_TTH_190418_Fall17_skim2lss3l && ORIGIN=/tmp/$USER;;
 esac;
 
-T2L=" -P $ORIGIN/TREES_TTH_190418_Fall17_skim2lss3l --Fs thqtrees/1_thq_recleaner_071118 --Fs thqtrees/2_thq_eventvars_071118 --Fs {P}/5_triggerDecision_230418_v1 --Fs {P}/7_tauTightSel_v2 --FMCs {P}/8_vtxWeight2017_v1 --FMCs {P}/6_bTagSF_v2 --Fs {P}/3_kinMVA_noMEM_200618_v5"
-T3L=" -P $ORIGIN/TREES_TTH_190418_Fall17_skim2lss3l --Fs thqtrees/1_thq_recleaner_071118 --Fs thqtrees/2_thq_eventvars_071118 --Fs {P}/5_triggerDecision_230418_v1 --Fs {P}/7_tauTightSel_v2 --FMCs {P}/8_vtxWeight2017_v1 --FMCs {P}/6_bTagSF_v2 --Fs {P}/3_kinMVA_noMEM_200618_v5" #--Fs {P}/3_kinMVA_withMEM_200618_v5"
+#T2L=" -P $ORIGIN/TREES_TTH_190418_Fall17_skim2lss3l --Fs thqtrees/1_thq_recleaner_071118 --Fs thqtrees/2_thq_eventvars_280219 --Fs {P}/5_triggerDecision_230418_v1 --Fs {P}/7_tauTightSel_v2 --FMCs {P}/8_vtxWeight2017_v1 --FMCs {P}/6_bTagSF_v2 --Fs {P}/3_kinMVA_noMEM_200618_v5"
+#T3L=" -P $ORIGIN/TREES_TTH_190418_Fall17_skim2lss3l --Fs thqtrees/1_thq_recleaner_071118 --Fs thqtrees/2_thq_eventvars_280219 --Fs {P}/5_triggerDecision_230418_v1 --Fs {P}/7_tauTightSel_v2 --FMCs {P}/8_vtxWeight2017_v1 --FMCs {P}/6_bTagSF_v2 --Fs {P}/3_kinMVA_noMEM_200618_v5" #--Fs {P}/3_kinMVA_withMEM_200618_v5"
+T2L=" -P fulltrees --Fs fullfriendtrees/1_thq_recleaner_FULL_041218 --Fs fullfriendtrees/2_thq_eventvars_FULL_171218 --Fs {P}/5_triggerDecision_230418_v1 --Fs {P}/7_tauTightSel_v2 --FMCs {P}/8_vtxWeight2017_v1 --FMCs {P}/6_bTagSF_v2"
+T3L=${T2L}
 T4L=${T2L}
 #if test -d $ORIGIN/TREES_TTH_190418_Fall17_skim4l ; then
 #    T4L=${T4L/TREES_TTH_190418_Fall17_skim2lss3l/TREES_TTH_190418_Fall17_skim4l};
