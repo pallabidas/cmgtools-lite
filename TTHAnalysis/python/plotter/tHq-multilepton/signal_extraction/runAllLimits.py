@@ -39,7 +39,7 @@ def parseName(card, printout=True):
     return cv, ct, tag
 
 def setParamatersFreezeAll(ct,cv,freezeAlso=None):
-    addoptions = " --setParameters kappa_t=%.2f,kappa_V=%.2f" % (ct,cv)
+    addoptions = " --setParameters kappa_t=%.2f,kappa_V=%.2f" % (ct/cv, 1.0)
     addoptions += " --freezeParameters kappa_t,kappa_V,kappa_tau,kappa_mu,"
     addoptions += "kappa_b,kappa_c,kappa_g,kappa_gam,r_others"
     if freezeAlso:
