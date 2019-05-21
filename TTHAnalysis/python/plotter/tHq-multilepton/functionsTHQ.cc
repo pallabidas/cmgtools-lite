@@ -121,18 +121,18 @@ float tHq_MVAto1D_3l_8(float mva_tt, float mva_ttv){
   -1         0         1 
 */
     if( mva_tt  > r_3  && mva_ttv  >  s_2 ) return 8;
-    if( mva_tt  > r_2  && mva_ttv  >  s_2 ) return 7;
-    if( mva_tt  > r_1  && mva_ttv  >  s_2 ) return 6;
-    if( mva_tt >= -1.0 && mva_ttv  >  s_2 ) return 4;
+    if( mva_tt  > r_2  && mva_ttv  >  s_2 ) return 6;
+    if( mva_tt  > r_1  && mva_ttv  >  s_2 ) return 4;
+    if( mva_tt >= -1.0 && mva_ttv  >  s_2 ) return 7;
 
     if( mva_tt  > r_3  && mva_ttv  >  s_1 ) return 5;
     if( mva_tt  > r_2  && mva_ttv  >  s_1 ) return 5;
-    if( mva_tt  > r_1  && mva_ttv  >  s_1 ) return 2;
-    if( mva_tt >= -1.0 && mva_ttv  >  s_1 ) return 4;
+    if( mva_tt  > r_1  && mva_ttv  >  s_1 ) return 3;
+    if( mva_tt >= -1.0 && mva_ttv  >  s_1 ) return 7;
 
-    if( mva_tt  > r_3  && mva_ttv >= -1.0 ) return 3;
-    if( mva_tt  > r_2  && mva_ttv >= -1.0 ) return 3;
-    if( mva_tt  > r_1  && mva_ttv >= -1.0 ) return 3;
+    if( mva_tt  > r_3  && mva_ttv >= -1.0 ) return 2;
+    if( mva_tt  > r_2  && mva_ttv >= -1.0 ) return 2;
+    if( mva_tt  > r_1  && mva_ttv >= -1.0 ) return 2;
     if( mva_tt >= -1.0 && mva_ttv >= -1.0 ) return 1;
 
     return 0;
@@ -194,19 +194,19 @@ float tHq_MVAto1D_2lss_8(float mva_tt, float mva_ttv){
   -1         0         1 
 */
     if( mva_tt  > w_3  && mva_ttv  >  z_2 ) return 8;
-    if( mva_tt  > w_2  && mva_ttv  >  z_2 ) return 7;
-    if( mva_tt  > w_1  && mva_ttv  >  z_2 ) return 6;
-    if( mva_tt >= -1.0 && mva_ttv  >  z_2 ) return 4;
+    if( mva_tt  > w_2  && mva_ttv  >  z_2 ) return 6;
+    if( mva_tt  > w_1  && mva_ttv  >  z_2 ) return 2;
+    if( mva_tt >= -1.0 && mva_ttv  >  z_2 ) return 5;
 
-    if( mva_tt  > w_3  && mva_ttv  >  z_1 ) return 5;
-    if( mva_tt  > w_2  && mva_ttv  >  z_1 ) return 5;
-    if( mva_tt  > w_1  && mva_ttv  >  z_1 ) return 2;
-    if( mva_tt >= -1.0 && mva_ttv  >  z_1 ) return 4;
+    if( mva_tt  > w_3  && mva_ttv  >  z_1 ) return 7;
+    if( mva_tt  > w_2  && mva_ttv  >  z_1 ) return 7;
+    if( mva_tt  > w_1  && mva_ttv  >  z_1 ) return 1;
+    if( mva_tt >= -1.0 && mva_ttv  >  z_1 ) return 5;
 
     if( mva_tt  > w_3  && mva_ttv >= -1.0 ) return 3;
     if( mva_tt  > w_2  && mva_ttv >= -1.0 ) return 3;
     if( mva_tt  > w_1  && mva_ttv >= -1.0 ) return 3;
-    if( mva_tt >= -1.0 && mva_ttv >= -1.0 ) return 1;
+    if( mva_tt >= -1.0 && mva_ttv >= -1.0 ) return 4;
 
     return 0;
 }
