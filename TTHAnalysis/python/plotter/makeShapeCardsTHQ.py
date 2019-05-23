@@ -254,8 +254,8 @@ class ShapeCardMaker:
                                           ofilename.replace('.card.txt','.input.root'))
             datacard.write('##----------------------------------\n')
             datacard.write('bin         %s\n' % self.binname)
-            # datacard.write('observation %s\n' % self.allyields['data_obs'])
-            datacard.write('observation -1\n')
+            datacard.write('observation %s\n' % self.allyields['data_obs'])
+            # datacard.write('observation -1\n')
             datacard.write('##----------------------------------\n')
 
             klen = max([7, len(self.binname)]+map(len, self.processes))
@@ -267,8 +267,8 @@ class ShapeCardMaker:
             datacard.write(hpatt%'bin'     +"     "+(" ".join([kpatt % self.binname  for p in self.processes]))+"\n")
             datacard.write(hpatt%'process' +"     "+(" ".join([kpatt % procnames.get(p,p) for p in self.processes]))+"\n")
             datacard.write(hpatt%'process' +"     "+(" ".join([kpatt % self.iproc[p] for p in self.processes]))+"\n")
-            # datacard.write(hpatt%'rate'    +"     "+(" ".join([fpatt % self.allyields[p] for p in self.processes]))+"\n")
-            datacard.write(hpatt%'rate'    +"     "+(" ".join([kpatt % '-1' for p in self.processes]))+"\n")
+            datacard.write(hpatt%'rate'    +"     "+(" ".join([fpatt % self.allyields[p] for p in self.processes]))+"\n")
+            # datacard.write(hpatt%'rate'    +"     "+(" ".join([kpatt % '-1' for p in self.processes]))+"\n")
             datacard.write('##----------------------------------\n')
 
             for name in nuisances:
