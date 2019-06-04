@@ -181,8 +181,8 @@ fi
 if [[ "$1" == "all" || "$1" == "2lss_mm" ]]; then
     OPT_2L="${T2L} ${OPTIONS} -W vtxWeight2017*eventBTagSF*NonPrefiringProb*leptonSF_ttH(LepGood_pdgId[iLepFO_Recl[0]],LepGood_pt[iLepFO_Recl[0]],LepGood_eta[iLepFO_Recl[0]],2)*leptonSF_ttH(LepGood_pdgId[iLepFO_Recl[1]],LepGood_pt[iLepFO_Recl[1]],LepGood_eta[iLepFO_Recl[1]],2)*triggerSF_ttH(LepGood_pdgId[iLepFO_Recl[0]],LepGood_pt[iLepFO_Recl[0]],LepGood_pdgId[iLepFO_Recl[1]],LepGood_pt[iLepFO_Recl[1]],nLepTight_Recl,0)"
 
-    echo python makeShapeCardsTHQ.py ${DOFILE} tHq-multilepton/signal_extraction/mca-thq-2lss-mcdata-frdata_limits_new.txt tHq-multilepton/cuts-thq-2lss.txt -E mm_chan ${FUNCTION_2L} $SYSTS $OPT_2L --binname tHq_2lss_mm --infile /afs/cern.ch/work/p/pdas/tth/TTHTrees/2017/cards/cards_May10/ktkv/2lss_mm/tHq_2lss_mm.bare.root
-    python makeShapeCardsTHQ.py ${DOFILE} tHq-multilepton/signal_extraction/mca-thq-2lss-mcdata-frdata_limits_new.txt tHq-multilepton/cuts-thq-2lss.txt -E mm_chan ${FUNCTION_2L} $SYSTS $OPT_2L --binname tHq_2lss_mm --infile /afs/cern.ch/work/p/pdas/tth/TTHTrees/2017/cards/cards_May10/ktkv/2lss_mm/tHq_2lss_mm.bare.root;
+    echo python makeShapeCardsTHQ.py ${DOFILE} tHq-multilepton/signal_extraction/mca-thq-2lss-mcdata-frdata_limits_new.txt tHq-multilepton/cuts-thq-2lss.txt -E mm_chan ${FUNCTION_2L} $SYSTS $OPT_2L --binname tHq_2lss_mm --infile /afs/cern.ch/work/p/pdas/tth/TTHTrees/2017/cards/cards_May23/ktkv/2lss_mm/tHq_2lss_mm.bare.root
+    python makeShapeCardsTHQ.py ${DOFILE} tHq-multilepton/signal_extraction/mca-thq-2lss-mcdata-frdata_limits_new.txt tHq-multilepton/cuts-thq-2lss.txt -E mm_chan ${FUNCTION_2L} $SYSTS $OPT_2L --binname tHq_2lss_mm --infile /afs/cern.ch/work/p/pdas/tth/TTHTrees/2017/cards/cards_May23/ktkv/2lss_mm/tHq_2lss_mm.bare.root;
 
     echo "Done at $(date)"
 
@@ -191,8 +191,8 @@ fi
 if [[ "$1" == "all" || "$1" == "2lss_em" ]]; then
     OPT_2L="${T2L} ${OPTIONS} -W vtxWeight2017*eventBTagSF*NonPrefiringProb*leptonSF_ttH(LepGood_pdgId[iLepFO_Recl[0]],LepGood_pt[iLepFO_Recl[0]],LepGood_eta[iLepFO_Recl[0]],2)*leptonSF_ttH(LepGood_pdgId[iLepFO_Recl[1]],LepGood_pt[iLepFO_Recl[1]],LepGood_eta[iLepFO_Recl[1]],2)*triggerSF_ttH(LepGood_pdgId[iLepFO_Recl[0]],LepGood_pt[iLepFO_Recl[0]],LepGood_pdgId[iLepFO_Recl[1]],LepGood_pt[iLepFO_Recl[1]],nLepTight_Recl,0)"
 
-    echo python makeShapeCardsTHQ.py ${DOFILE} tHq-multilepton/signal_extraction/mca-thq-2lss-mcdata-frdata_limits_new.txt tHq-multilepton/cuts-thq-2lss.txt -E em_chan ${FUNCTION_2L} $SYSTS $OPT_2L --binname tHq_2lss_em --infile /afs/cern.ch/work/p/pdas/tth/TTHTrees/2017/cards/cards_May10/ktkv/2lss_em/tHq_2lss_em.bare.root
-    python makeShapeCardsTHQ.py ${DOFILE} tHq-multilepton/signal_extraction/mca-thq-2lss-mcdata-frdata_limits_new.txt tHq-multilepton/cuts-thq-2lss.txt -E em_chan ${FUNCTION_2L} $SYSTS $OPT_2L --binname tHq_2lss_em --infile /afs/cern.ch/work/p/pdas/tth/TTHTrees/2017/cards/cards_May10/ktkv/2lss_em/tHq_2lss_em.bare.root;
+    echo python makeShapeCardsTHQ.py ${DOFILE} tHq-multilepton/signal_extraction/mca-thq-2lss-mcdata-frdata_limits_new.txt tHq-multilepton/cuts-thq-2lss.txt -E em_chan ${FUNCTION_2L} $SYSTS $OPT_2L --binname tHq_2lss_em --infile /afs/cern.ch/work/p/pdas/tth/TTHTrees/2017/cards/cards_May23/ktkv/2lss_em/tHq_2lss_em.bare.root
+    python makeShapeCardsTHQ.py ${DOFILE} tHq-multilepton/signal_extraction/mca-thq-2lss-mcdata-frdata_limits_new.txt tHq-multilepton/cuts-thq-2lss.txt -E em_chan ${FUNCTION_2L} $SYSTS $OPT_2L --binname tHq_2lss_em --infile /afs/cern.ch/work/p/pdas/tth/TTHTrees/2017/cards/cards_May23/ktkv/2lss_em/tHq_2lss_em.bare.root;
 
     echo "Done at $(date)"
 
@@ -211,8 +211,8 @@ fi
 if [[ "$1" == "all" || "$1" == "3l" ]]; then
     OPT_3L="${T3L} ${OPTIONS} -W vtxWeight2017*eventBTagSF*NonPrefiringProb*leptonSF_ttH(LepGood_pdgId[iLepFO_Recl[0]],LepGood_pt[iLepFO_Recl[0]],LepGood_eta[iLepFO_Recl[0]],3)*leptonSF_ttH(LepGood_pdgId[iLepFO_Recl[1]],LepGood_pt[iLepFO_Recl[1]],LepGood_eta[iLepFO_Recl[1]],3)*leptonSF_ttH(LepGood_pdgId[iLepFO_Recl[2]],LepGood_pt[iLepFO_Recl[2]],LepGood_eta[iLepFO_Recl[2]],3)*triggerSF_ttH(LepGood_pdgId[iLepFO_Recl[0]],LepGood_pt[iLepFO_Recl[0]],LepGood_pdgId[iLepFO_Recl[1]],LepGood_pt[iLepFO_Recl[1]],nLepTight_Recl,0)"
 
-    echo python makeShapeCardsTHQ.py ${DOFILE} tHq-multilepton/signal_extraction/mca-thq-3l-mcdata-frdata_limits_new.txt tHq-multilepton/cuts-thq-3l.txt ${FUNCTION_3L} $SYSTS $OPT_3L --binname tHq_3l --infile /afs/cern.ch/work/p/pdas/tth/TTHTrees/2017/cards/cards_May10/ktkv/3l/tHq_3l.bare.root
-    python makeShapeCardsTHQ.py ${DOFILE} tHq-multilepton/signal_extraction/mca-thq-3l-mcdata-frdata_limits_new.txt tHq-multilepton/cuts-thq-3l.txt ${FUNCTION_3L} $SYSTS $OPT_3L --binname tHq_3l --infile /afs/cern.ch/work/p/pdas/tth/TTHTrees/2017/cards/cards_May10/ktkv/3l/tHq_3l.bare.root;
+    echo python makeShapeCardsTHQ.py ${DOFILE} tHq-multilepton/signal_extraction/mca-thq-3l-mcdata-frdata_limits_new.txt tHq-multilepton/cuts-thq-3l.txt ${FUNCTION_3L} $SYSTS $OPT_3L --binname tHq_3l --infile /afs/cern.ch/work/p/pdas/tth/TTHTrees/2017/cards/cards_May23/ktkv/3l/tHq_3l.bare.root
+    python makeShapeCardsTHQ.py ${DOFILE} tHq-multilepton/signal_extraction/mca-thq-3l-mcdata-frdata_limits_new.txt tHq-multilepton/cuts-thq-3l.txt ${FUNCTION_3L} $SYSTS $OPT_3L --binname tHq_3l --infile /afs/cern.ch/work/p/pdas/tth/TTHTrees/2017/cards/cards_May23/ktkv/3l/tHq_3l.bare.root;
 
     echo "Done at $(date)"
 
