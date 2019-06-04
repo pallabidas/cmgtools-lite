@@ -18,7 +18,7 @@ from CMGTools.TTHAnalysis.plotter.histoWithNuisances import HistoWithNuisances
 #          "DYJetsToLL_M50_LO_ext_part2",
 #          "DYJetsToLL_M50_LO_ext_part3",
 #          "WpWpJJ", "WWDouble"]
-RARES = [ "Rares", "WWss", "Gstar" ]
+#RARES = [ "Rares", "WWss", "Gstar" ]
 
 mergeMap = {
     "ttH_hww" : "ttH",
@@ -31,13 +31,13 @@ mergeMap = {
     "tHW_htt" : "tHW",
     "tHW_hzz" : "tHW",
 }
-mergeMap.update({k:'ZZ' for k in RARES})
+#mergeMap.update({k:'ZZ' for k in RARES})
 
 PROC_TO_PLOTHIST = {
 # processes defined for the fit, but not in the plot should take the
 # colors etc. from these other processes
-    'Rares'   : 'ZZ',
-    'WWss'    : 'ZZ',
+#    'Rares'   : 'ZZ',
+#    'WWss'    : 'ZZ',
     'tHq_hww' : 'tHq',
     'tHq_htt' : 'tHq',
     'tHq_hzz' : 'tHq',
@@ -88,10 +88,18 @@ CHANNEL_LABELS = {
     'tHq_2lss_ee_13TeV' : "e^{#pm}e^{#pm}"
 }
 
-REBINMAP_3l = {7:9, 2:5, 9:7, 5:2}
-REBINMAP_2l = {3:2, 2:4, 5:3, 4:8, 6:5, 9:6, 8:10, 10:9}
+#REBINMAP_3l = {7:9, 2:5, 9:7, 5:2}
+#REBINMAP_2l = {3:2, 2:4, 5:3, 4:8, 6:5, 9:6, 8:10, 10:9}
+REBINMAP_3l = {}
+REBINMAP_2l = {}
 
-from plotTHQ import LABELS
+#from plotTHQ import LABELS
+LABELS = {
+    'Rares' : 'W^{#pm}W^{#pm}, t#bar{t}t#bar{t}, VVV',
+    'TZQ' : 'tZq',
+    'data_fakes' : 'Nonprompt',
+    'data_flips' : 'Charge misid.'
+}
 
 AXISLABEL = 'Combined BDT bin'
 
@@ -254,7 +262,7 @@ def doRatioHistsCustom(pspec, pmap, total, maxRange,
     for b in xrange(1,unity.GetNbinsX()+1):
         e,n = unity.GetBinError(b), unity.GetBinContent(b)
         unity.SetBinContent(b, 1 if n > 0 else 0)
-        unity.SetBinError(b, 0)
+        unity.SetBinError(b, e/n)
         if not errorsOnRef:
             raise RuntimeError("Not implemented yet with histoWithNuisances")
     rmin = min(1-2*unityErr.GetErrorYlow(b)  for b in xrange(unityErr.GetN())) if unityErr.GetN() else 1
@@ -285,20 +293,20 @@ def doRatioHistsCustom(pspec, pmap, total, maxRange,
     unityErr0.SetMarkerStyle(1);
     unityErr0.SetMarkerColor(ROOT.kBlue-7);
     ROOT.gStyle.SetErrorX(0.5);
-    unity.Draw("AXIS");
-    if errorsOnRef:
-        unityErr.Draw("E2");
-    if fitRatio != None and len(ratios) == 1:
-        from CMGTools.TTHAnalysis.tools.plotDecorations import fitTGraph
-        fitTGraph(ratio,order=fitRatio)
-        unityErr.SetFillStyle(3013);
-        unityErr0.SetFillStyle(3013);
-        if errorsOnRef:
-            unityErr0.Draw("E2 SAME");
-    else:
-        if errorsOnRef:
-            unityErr0.Draw("E2 SAME");
-    unity.Draw("AXIS SAME");
+    unity.Draw("E2");
+    #if errorsOnRef:
+    #unityErr.Draw("pez same");
+    #if fitRatio != None and len(ratios) == 1:
+    #    from CMGTools.TTHAnalysis.tools.plotDecorations import fitTGraph
+    #    fitTGraph(ratio,order=fitRatio)
+    #    unityErr.SetFillStyle(3013);
+    #    unityErr0.SetFillStyle(3013);
+    #    if errorsOnRef:
+    #        unityErr0.Draw("E2 SAME");
+    #else:
+    #    if errorsOnRef:
+    #        unityErr0.Draw("E2 SAME");
+    #unity.Draw("AXIS SAME");
     rmin = float(pspec.getOption("RMin",rmin))
     rmax = float(pspec.getOption("RMax",rmax))
     unity.GetYaxis().SetRangeUser(rmin,rmax);
@@ -358,7 +366,7 @@ def doRatioHistsCustom(pspec, pmap, total, maxRange,
     leg1.SetLineColor(0)
     leg1.SetTextFont(43)
     leg1.SetTextSize(18)
-    leg1.AddEntry(unityErr, "Total uncertainty", "F")
+    leg1.AddEntry(unity, "Total uncertainty", "F")
     if showStatTotLegend: leg1.Draw()
     global legendratio0_, legendratio1_
     legendratio0_ = leg0
@@ -395,7 +403,6 @@ if __name__ == "__main__":
 
     mca_merged = MCAnalysis(args[0], options) # for the merged processes (plots)
     mca_indivi = MCAnalysis(args[1], options) # for the individual processes (fit)
-    print args[1]
     channel = {'3l': 'tHq_3l_13TeV', 
                '2lss_mm':'tHq_2lss_mm_13TeV',
                '2lss_em':'tHq_2lss_em_13TeV',
@@ -464,8 +471,6 @@ if __name__ == "__main__":
         # Remove the _promptsub processes
         processes = [p for p in processes if not p.endswith('_promptsub')]
 
-        #for proc in processes:
-        #    print proc
         ## HACK
         if '2lss_mm' in channel:
             for removeme in ['Convs','Conversions','data_flips']:
@@ -474,9 +479,7 @@ if __name__ == "__main__":
 
         stack = ROOT.THStack("%s_stack_%s"%(var,MLD),"")
 
-        print infile
         for process in processes:
-            print process
             # Get the pre-fit histogram (just for the color etc.)
             hist = infile.Get("%s_%s" % (var, PROC_TO_PLOTHIST.get(process, process)))
             if not hist:
@@ -487,12 +490,9 @@ if __name__ == "__main__":
             hist.SetDirectory(0)
 
             # Get the post-fit shape
-            channel = "thq_3l_13TeV"
             chdir = mldir.GetDirectory("%s" % channel)
             h_postfit = chdir.Get("%s" % process)
             #h_postfit = mldir.Get("%s/%s" % (channel, process))
-            print h_postfit.GetName()
-            print h_postfit.GetNbinsX()
             if not h_postfit:
                 # if process not in mergeMap:
                 raise RuntimeError("Could not find shape for %s/%s in dir %s of file %s" % (channel, process, mldir.GetName(), args[3]))
@@ -558,7 +558,7 @@ if __name__ == "__main__":
         ## Cosmetics (note that these are affected by doRatioHistsCustom below)
         if not options.doLog:
             if ymax < 0: #MLD == 'prefit':
-                ymax = 1.2*max(htot.GetMaximum(), hdata.GetMaximum())
+                ymax = 1.5*max(htot.GetMaximum(), hdata.GetMaximum())
             htot.GetYaxis().SetRangeUser(0, ymax)
         else:
             htot.GetYaxis().SetRangeUser(YAXIS_RANGE.get(channel, (0.5, 100))[0],
@@ -575,6 +575,7 @@ if __name__ == "__main__":
                 hsig.GetYaxis().SetRangeUser(0.1, 20)
 
         htot.GetXaxis().SetTitle(AXISLABEL)
+        htot.GetXaxis().SetLabelSize(0)
         # htot.GetXaxis().SetNdivisions(510)
         # htot.GetYaxis().SetNdivisions(510)
         htot.GetYaxis().SetTitle('Events/Bin')
@@ -619,7 +620,7 @@ if __name__ == "__main__":
         ## Adjust scale
         sigscalefactor = 10
         thqprefit.Scale(float(sigscalefactor))
-        thqprefit.Draw("HIST SAME")
+        #thqprefit.Draw("HIST SAME")
 
         ## Do the legend
         leg = None
@@ -643,7 +644,7 @@ if __name__ == "__main__":
                            legBorder=False,
                            legWidth=0.28)
         leg.AddEntry(totalError, "Total uncertainty","F") 
-        leg.AddEntry(thqprefit, "%d#times tH (expected)" % sigscalefactor,"L") 
+        #leg.AddEntry(thqprefit, "%d#times tH (expected)" % sigscalefactor,"L") 
         
         lspam = options.lspam
         if channel == 'em':
