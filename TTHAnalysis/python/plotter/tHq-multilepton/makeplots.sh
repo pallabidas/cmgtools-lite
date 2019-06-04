@@ -39,12 +39,13 @@ FRIENDTREES=" -F sf/t skimtrees/1_recleaner_290319/evVarFriend_{cname}.root"\
 " -F sf/t skimtrees/5_triggerDecision/evVarFriend_{cname}.root"\
 " --FMC sf/t skimtrees/6_bTagSF_v4/evVarFriend_{cname}.root"\
 " -F sf/t skimtrees/7_tauTightSel/evVarFriend_{cname}.root"\
-" --FMC sf/t skimtrees/8_vtxWeight2017_v2/evVarFriend_{cname}.root"
+" --FMC sf/t skimtrees/8_vtxWeight2017_v2/evVarFriend_{cname}.root"\
+" -F sf/t skimtrees/3_BDThttTT_Hj/evVarFriend_{cname}.root"
 DRAWOPTIONS=" --split-factor=-1 --WA prescaleFromSkim  --maxRatioRange 0.0  1.99 --ratioYNDiv 505"\
 " --showRatio --attachRatioPanel --fixRatioRange --showMCError"\
 " --unc tHq-multilepton/signal_extraction/systsUnc.txt"\
 " --legendColumns 3 --legendWidth 0.6  --legendFontSize 0.042"\
-" --noCms --topSpamSize 1.1 --lspam #scale[1.1]{#bf{CMS}}#scale[1.0]{#it{Preliminary}}"\
+" --noCms --topSpamSize 1.1"\
 " --plotgroup data_fakes+=.*_promptsub --neglist .*_promptsub.*"
 #DRAWOPTIONS=" --split-factor=-1 --WA prescaleFromSkim  --noCms --topSpamSize 1.1 --lspam #scale[1.1]{#bf{CMS}}#scale[1.0]{#it{Preliminary}} --plotgroup data_fakes+=.*_promptsub --neglist .*_promptsub.*" #for 2D BDT plots
 
@@ -200,13 +201,19 @@ case "$PLOTTAG" in
 	DONE
 	;;
     "postfit" )
-        FITRESULT="cards/cards_May6/ITC_unblinded/fitDiagnostics_sb.root"
-        DRAWOPTIONS="--maxRatioRange 0 3.2 --fixRatioRange"
+        FITRESULT="/afs/cern.ch/work/p/pdas/tth/TTHTrees/2017/cards/cards_May23/ktkv/test/fitDiagnostics.1_m1.root"
+        DRAWOPTIONS=" --maxRatioRange 0 3.2 --fixRatioRange"
 
         MCA1="tHq-multilepton/mca-3l-mcdata-frdata.txt"
         MCA2="tHq-multilepton/signal_extraction/mca-thq-3l-mcdata-frdata_limits_new.txt"
-        PLOTINPUT="/afs/cern.ch/work/p/pdas/www/THQ2017/plots_May2/unblinded/3l/plots-thq-3l-kinMVA.root"
-        python tHq-multilepton/postFitPlotsTHq.py ${MCA1} ${MCA2} ${PLOTINPUT} ${FITRESULT} 3l --outDir ${OUTDIR} ${DRAWOPTIONS}
+	MCA3="tHq-multilepton/mca-2lss-mcdata-frdata.txt"
+        MCA4="tHq-multilepton/signal_extraction/mca-thq-2lss-mcdata-frdata_limits_new.txt"
+        PLOTINPUT1="/afs/cern.ch/work/p/pdas/www/THQ2017/plots_May6/3l/plots-thq-3l-kinMVA.root"
+        PLOTINPUT2="/afs/cern.ch/work/p/pdas/www/THQ2017/plots_May6/2lss-em/plots-thq-2lss-kinMVA.root"
+        PLOTINPUT3="/afs/cern.ch/work/p/pdas/www/THQ2017/plots_May6/2lss-mm/plots-thq-2lss-kinMVA.root"
+        python tHq-multilepton/postFitPlotsTHq.py ${MCA1} ${MCA2} ${PLOTINPUT1} ${FITRESULT} 3l --outDir /afs/cern.ch/work/p/pdas/www/THQ2017/${OUTDIR}/3l ${DRAWOPTIONS}
+        python tHq-multilepton/postFitPlotsTHq.py ${MCA3} ${MCA4} ${PLOTINPUT2} ${FITRESULT} 2lss_em --outDir /afs/cern.ch/work/p/pdas/www/THQ2017/${OUTDIR}/2lss-em ${DRAWOPTIONS}
+        python tHq-multilepton/postFitPlotsTHq.py ${MCA3} ${MCA4} ${PLOTINPUT3} ${FITRESULT} 2lss_mm --outDir /afs/cern.ch/work/p/pdas/www/THQ2017/${OUTDIR}/2lss-mm ${DRAWOPTIONS}
 
 	DONE
         ;;
