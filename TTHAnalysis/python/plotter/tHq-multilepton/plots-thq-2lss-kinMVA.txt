@@ -4,7 +4,7 @@ nJet25                  : nJet25                  : [1.5,2.5,3.5,4.5,5.5,6.5,7.5
 nJetEta1_60             : nJetEta1_60             : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5]; XTitle='N(jet\,|#eta|>1.0) non CSV medium'
 nBJetLoose25            : nBJetLoose25_Recl       : [0.5,1.5,2.5,3.5,4.5] ; XTitle='N(jet\, p_{T} > 25\, CSV loose)'
 nBJetMedium25           : nBJetMedium25_Recl      : [0.5,1.5,2.5,3.5,4.5] ; XTitle='N(jet\, p_{T} > 25\, CSV Medium)'
-maxEtaJet25_60          : maxEtaJet25_60          : 10,0,5.0; XTitle="max jet |#eta|"
+maxEtaJet25_60          : maxEtaJet25_60          : 10,0,5.0; XTitle="Max. |#eta| of any untagged jet"
 dEtaFwdJetBJet_60       : dEtaFwdJetBJet_60       : 10,0,6;   XTitle="#Delta#eta max fwd jet and leading bjet"
 dEtaFwdJet2BJet_60      : dEtaFwdJet2BJet_60      : 10,0,6;   XTitle="#Delta#eta max fwd jet and sub-leading bjet"
 dEtaFwdJetClosestLep_60 : dEtaFwdJetClosestLep_60 : 10,0,6 ;  XTitle="#Delta#eta max fwd jet and closest lepton"
@@ -24,11 +24,11 @@ thqMVA_ttv_2lss_60  : thqMVA_ttv_2lss_60 : 10,-1.,1.0; XTitle="kinMVA (tHq vs t#
 #finalBins_log_ee_60 : tHq_MVAto1D_2lss_10(thqMVA_tt_2lss_60, thqMVA_ttv_2lss_60) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='BDT bin',Logy,LegendCutoff=0.01,YMin=0.5,YMax=70,Legend='BR' # for ee
 # finalBins_60        : tHq_MVAto1D_2lss_sbratio(thqMVA_tt_2lss_60, thqMVA_ttv_2lss_60) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]; XTitle='BDT bin', Legend='TL'
 
-finalBins_60        : tHq_MVAto1D_2lss_8(thqMVA_tt_2lss_60, thqMVA_ttv_2lss_60) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5]; XTitle='BDT bin'
-finalBins_log_mm_60 : tHq_MVAto1D_2lss_8(thqMVA_tt_2lss_60, thqMVA_ttv_2lss_60) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5]; XTitle='BDT bin',Logy,LegendCutoff=0.01,YMin=0.3,YMax=100,Legend='BR' # for mm
-finalBins_log_em_60 : tHq_MVAto1D_2lss_8(thqMVA_tt_2lss_60, thqMVA_ttv_2lss_60) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5]; XTitle='BDT bin',Logy,LegendCutoff=0.01,YMin=0.5,YMax=200,Legend='BR' # for em
-finalBins_log_ee_60 : tHq_MVAto1D_2lss_8(thqMVA_tt_2lss_60, thqMVA_ttv_2lss_60) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5]; XTitle='BDT bin',Logy,LegendCutoff=0.01,YMin=0.5,YMax=70,Legend='BR' # for ee
+finalBins_60        : tHq_MVAto1D_2lss_8(thqMVA_tt_2lss_60, thqMVA_ttv_2lss_60) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5]; XTitle='Combined BDT bin'
+finalBins_log_mm_60 : tHq_MVAto1D_2lss_8(thqMVA_tt_2lss_60, thqMVA_ttv_2lss_60) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5]; XTitle='Combined BDT bin',Logy,LegendCutoff=0.01,YMin=0.3,YMax=100,Legend='BR' # for mm
+finalBins_log_em_60 : tHq_MVAto1D_2lss_8(thqMVA_tt_2lss_60, thqMVA_ttv_2lss_60) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5]; XTitle='Combined BDT bin',Logy,LegendCutoff=0.01,YMin=0.5,YMax=200,Legend='BR' # for em
+finalBins_log_ee_60 : tHq_MVAto1D_2lss_8(thqMVA_tt_2lss_60, thqMVA_ttv_2lss_60) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5]; XTitle='Combined BDT bin',Logy,LegendCutoff=0.01,YMin=0.5,YMax=70,Legend='BR' # for ee
 
-kinMVA_2lss_2Dplot : thqMVA_tt_2lss_60\:thqMVA_ttv_2lss_60 : 10,-1,1,10,-1,1; XTitle="BDT (tHq vs. tt)", YTitle="BDT (tHq vs. ttV)"
+#kinMVA_2lss_2Dplot : thqMVA_tt_2lss_60\:thqMVA_ttv_2lss_60 : 10,-1,1,10,-1,1; XTitle="BDT (tHq vs. tt)", YTitle="BDT (tHq vs. ttV)"
 BDThttTT_eventReco_mvaValue : BDThttTT_eventReco_mvaValue : 10,-1,1; XTitle="resolved HTT score"
 sumJetsPt_60 : sumJetsPt_60 : 10,0,1200; XTitle="sum of jets p_{T} [GeV]"
