@@ -60,7 +60,8 @@ def getLimits(card, model='K6', unblind=False, printCommand=False):
     if not unblind:
         combinecmd += " --run blind"
     combinecmd += " -m 125 --verbose 0 -n cvct%s"%tag
-    if model in ['K4', 'K5', 'K6', 'K7']:
+    if cv != 1: combinecmd +=" --cminDefaultMinimizerStrategy 0 "
+    if model in ['K4', 'K5', 'K6', 'K7', 'K5b']:
         if model == 'K6': # Rescale to cv = 1, we only care about the ct/cv ratio
             combinecmd += setParamatersFreezeAll(ct/cv,1.0)
         else:
@@ -100,7 +101,7 @@ def getFitValues(card, model='K6', unblind=False, printCommand=False):
 
     combinecmd =  "combine -M MaxLikelihoodFit"
     combinecmd += " -m 125 --verbose 0 -n cvct%s"%tag
-    if model in ['K4', 'K5', 'K6', 'K7']:
+    if model in ['K4', 'K5', 'K6', 'K7', 'K5b']:
         if model == 'K6': # Rescale to cv = 1, we only care about the ct/cv ratio
             combinecmd += setParamatersFreezeAll(ct/cv,1.0)
         else:
@@ -135,7 +136,7 @@ def getSignificance(card, model='K6', unblind=False, printCommand=False):
 
     combinecmd =  "combine -M Significance --signif"
     combinecmd += " -m 125 --verbose 0 -n cvct%s"%tag
-    if model in ['K4', 'K5', 'K6', 'K7']:
+    if model in ['K4', 'K5', 'K6', 'K7', 'K5b']:
         if model == 'K6': # Rescale to cv = 1, we only care about the ct/cv ratio
             combinecmd += setParamatersFreezeAll(ct/cv,1.0)
         else:
